@@ -33,7 +33,7 @@
   }
 
   .gradient-text {
-    @apply text-[#A05AFF]
+    @apply text-[#A05AFF];
   }
 }
 
