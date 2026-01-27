@@ -11,42 +11,42 @@ const ShipmentCard = ({ shipment }) => {
   const getStatusConfig = (status) => {
     const configs = {
       'Delivered': {
-        gradient: 'from-emerald-500/20 to-teal-500/20',
-        border: 'border-emerald-500/30',
-        badge: 'bg-gradient-to-r from-emerald-500 to-teal-500',
-        text: 'text-emerald-300',
+        gradient: 'from-[#1BCFB4]/20 to-[#1BCFB4]/20',
+        border: 'border-[#1BCFB4]',
+        badge: 'bg-[#1BCFB4]',
+        text: 'text-[#1BCFB4]',
         icon: '✓',
-        lightBg: 'bg-emerald-500/10',
+        lightBg: 'bg-[#1BCFB4]/10',
       },
       'In Transit': {
-        gradient: 'from-amber-500/20 to-orange-500/20',
-        border: 'border-amber-500/30',
-        badge: 'bg-gradient-to-r from-amber-500 to-orange-500',
-        text: 'text-amber-300',
+        gradient: 'from-[#FE9496]/20 to-[#FE9496]/20',
+        border: 'border-[#FE9496]',
+        badge: 'bg-[#FE9496]',
+        text: 'text-[#FE9496]',
         icon: '→',
-        lightBg: 'bg-amber-500/10',
+        lightBg: 'bg-[#FE9496]/10',
       },
       'Out for Delivery': {
-        gradient: 'from-blue-500/20 to-cyan-500/20',
-        border: 'border-blue-500/30',
-        badge: 'bg-gradient-to-r from-blue-500 to-cyan-500',
-        text: 'text-blue-300',
+        gradient: 'from-[#4BCBEB]/20 to-[#4BCBEB]/20',
+        border: 'border-[#4BCBEB]',
+        badge: 'bg-[#4BCBEB]',
+        text: 'text-[#4BCBEB]',
         icon: '🚚',
-        lightBg: 'bg-blue-500/10',
+        lightBg: 'bg-[#4BCBEB]/10',
       },
       'Pending': {
-        gradient: 'from-rose-500/20 to-pink-500/20',
-        border: 'border-rose-500/30',
-        badge: 'bg-gradient-to-r from-rose-500 to-pink-500',
-        text: 'text-rose-300',
+        gradient: 'from-[#A05AFF]/20 to-[#A05AFF]/20',
+        border: 'border-[#A05AFF]',
+        badge: 'bg-[#A05AFF]',
+        text: 'text-[#A05AFF]',
         icon: '⏳',
-        lightBg: 'bg-rose-500/10',
+        lightBg: 'bg-[#A05AFF]/10',
       },
       'Cancelled': {
-        gradient: 'from-gray-500/20 to-slate-500/20',
-        border: 'border-gray-500/30',
-        badge: 'bg-gradient-to-r from-gray-500 to-slate-500',
-        text: 'text-gray-300',
+        gradient: 'from-[#9E58FF]/20 to-[#9E58FF]/20',
+        border: 'border-[#9E58FF]',
+        badge: 'bg-[#9E58FF]',
+        text: 'text-[#9E58FF]',
         icon: '✗',
         lightBg: 'bg-gray-500/10',
       }
@@ -77,7 +77,7 @@ const ShipmentCard = ({ shipment }) => {
   };
 
   return (
-    <div className={`group glass-effect card-hover border-l-4 ${statusConfig.border} bg-gradient-to-br ${statusConfig.gradient} overflow-hidden`}>
+    <div className={`group card-hover border-l-4 ${statusConfig.border} ${statusConfig.lightBg} bg-white rounded-lg shadow-md hover:shadow-lg overflow-hidden transition-all`}>
       {/* Header Section */}
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-6">
@@ -87,10 +87,10 @@ const ShipmentCard = ({ shipment }) => {
                 <span className={`text-2xl block ${statusConfig.text}`}>{statusConfig.icon}</span>
               </div>
               <div>
-                <h3 className="font-poppins font-bold text-lg text-white leading-tight mb-1">
+                <h3 className="font-poppins font-bold text-lg text-gray-800 leading-tight mb-1">
                   {shipment.trackingNumber}
                 </h3>
-                <p className="text-sm text-slate-400">Tracking ID</p>
+                <p className="text-sm text-gray-500">Tracking ID</p>
               </div>
             </div>
           </div>
@@ -101,40 +101,40 @@ const ShipmentCard = ({ shipment }) => {
 
         {/* Info Grid with enhanced styling */}
         <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">From</p>
-            <p className="font-medium text-slate-200 text-sm">{shipment.sender}</p>
+          <div className="p-3 rounded-lg bg-white border border-[#1BCFB4]">
+            <p className="text-xs font-semibold text-[#1BCFB4] uppercase tracking-wider mb-1">From</p>
+            <p className="font-medium text-gray-800 text-sm">{shipment.sender}</p>
           </div>
-          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">To</p>
-            <p className="font-medium text-slate-200 text-sm">{shipment.receiver}</p>
+          <div className="p-3 rounded-lg bg-white border border-[#FE9496]">
+            <p className="text-xs font-semibold text-[#FE9496] uppercase tracking-wider mb-1">To</p>
+            <p className="font-medium text-gray-800 text-sm">{shipment.receiver}</p>
           </div>
-          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Location</p>
-            <p className="font-medium text-slate-200 text-sm">{shipment.lastLocation}</p>
+          <div className="p-3 rounded-lg bg-white border border-[#4BCBEB]">
+            <p className="text-xs font-semibold text-[#4BCBEB] uppercase tracking-wider mb-1">Location</p>
+            <p className="font-medium text-gray-800 text-sm">{shipment.lastLocation}</p>
           </div>
-          <div className={`p-3 rounded-lg bg-white/5 border border-white/10`}>
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Delivery</p>
-            <p className="font-medium text-slate-200 text-sm">{formatDate(shipment.estimatedDelivery)}</p>
+          <div className={`p-3 rounded-lg bg-white border border-[#A05AFF]`}>
+            <p className="text-xs font-semibold text-[#A05AFF] uppercase tracking-wider mb-1">Delivery</p>
+            <p className="font-medium text-gray-800 text-sm">{formatDate(shipment.estimatedDelivery)}</p>
           </div>
         </div>
 
         {/* Expandable Details with smooth animation */}
         {isExpanded && (
-          <div className="mt-4 pt-4 border-t border-white/10 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="mt-4 pt-4 border-t border-gray-200 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="space-y-3">
-              <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Current Status</p>
+              <div className="p-3 rounded-lg bg-white border border-[#1BCFB4]">
+                <p className="text-xs font-semibold text-[#1BCFB4] uppercase tracking-wider mb-2">Current Status</p>
                 <p className={`text-sm font-medium ${statusConfig.text}`}>{shipment.currentLocation}</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Last Update</p>
-                  <p className="text-xs text-slate-300">{formatDate(shipment.lastUpdate)}</p>
+                <div className="p-3 rounded-lg bg-white border border-[#4BCBEB]">
+                  <p className="text-xs font-semibold text-[#4BCBEB] uppercase tracking-wider mb-1">Last Update</p>
+                  <p className="text-xs text-gray-700">{formatDate(shipment.lastUpdate)}</p>
                 </div>
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Time</p>
-                  <p className="text-xs text-slate-300">{formatTime(shipment.lastUpdate)}</p>
+                <div className="p-3 rounded-lg bg-white border border-[#A05AFF]">
+                  <p className="text-xs font-semibold text-[#A05AFF] uppercase tracking-wider mb-1">Time</p>
+                  <p className="text-xs text-gray-700">{formatTime(shipment.lastUpdate)}</p>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ const ShipmentCard = ({ shipment }) => {
         )}
 
         {/* Enhanced Action Button */}
-        <div className="mt-6 pt-4 border-t border-white/10">
+        <div className="mt-6 pt-4 border-t border-gray-200">
           <button
             onClick={handleViewDetails}
             className={`w-full ${statusConfig.badge} btn-primary shadow-lg hover:shadow-2xl`}

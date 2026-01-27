@@ -7,11 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: '#A05AFF',
+        secondary: '#1BCFB4',
+        cyan: '#4BCBEB',
+        coral: '#FE9496',
+        purple: '#9E58FF',
         status: {
-          delivered: '#10b981',
-          transit: '#f97316',
-          pending: '#ef4444',
-          cancelled: '#6b7280',
+          delivered: '#1BCFB4',
+          transit: '#FE9496',
+          pending: '#A05AFF',
+          cancelled: '#4BCBEB',
         },
       },
       boxShadow: {

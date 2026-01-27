@@ -83,7 +83,7 @@ const ShipmentDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl animate-float"></div>
@@ -92,7 +92,7 @@ const ShipmentDashboard = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 glass-effect border-b border-white/20 backdrop-blur-xl sticky top-0">
+      <header className="relative z-10 bg-white border-b border-gray-200 sticky top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
             <div>
@@ -104,7 +104,7 @@ const ShipmentDashboard = () => {
                   </h1>
                 </div>
               </div>
-              <p className="text-slate-400 text-sm sm:text-base">Track your packages in real-time with live updates</p>
+              <p className="text-gray-600 text-sm sm:text-base">Track your packages in real-time with live updates</p>
             </div>
           </div>
         </div>
@@ -116,25 +116,25 @@ const ShipmentDashboard = () => {
         {loading && (
           <div className="flex flex-col items-center justify-center py-24">
             <div className="relative w-20 h-20 mb-6">
-              <div className="absolute inset-0 rounded-full border-4 border-slate-600"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-blue-300"></div>
               <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-cyan-500 border-r-blue-500 animate-spin"></div>
             </div>
-            <p className="text-xl font-poppins font-semibold text-white mb-2">Loading shipments...</p>
-            <p className="text-sm text-slate-400">Fetching real-time tracking data</p>
+            <p className="text-xl font-poppins font-semibold text-gray-900 mb-2">Loading shipments...</p>
+            <p className="text-sm text-gray-500">Fetching real-time tracking data</p>
           </div>
         )}
 
         {/* Error State */}
         {error && !loading && (
-          <div className="glass-effect border-l-4 border-rose-500/50 p-8 rounded-2xl mb-8 animate-in fade-in slide-in-from-top duration-300">
+          <div className="border-l-4 border-[#FE9496] p-8 rounded-2xl mb-8 bg-white animate-in fade-in slide-in-from-top duration-300">
             <div className="flex items-start gap-6">
               <span className="text-4xl">⚠️</span>
               <div className="flex-1">
-                <h3 className="text-2xl font-poppins font-bold text-white mb-2">Unable to Load Shipments</h3>
-                <p className="text-slate-300 mb-6">{error}</p>
+                <h3 className="text-2xl font-poppins font-bold text-gray-900 mb-2">Unable to Load Shipments</h3>
+                <p className="text-gray-600 mb-6">{error}</p>
                 <button
                   onClick={handleRetry}
-                  className="btn-primary bg-gradient-to-r from-rose-500 to-pink-500 shadow-lg hover:shadow-rose-500/50"
+                  className="btn-primary bg-[#FE9496] shadow-lg hover:shadow-[#FE9496]/50"
                 >
                   Try Again
                 </button>
@@ -145,16 +145,16 @@ const ShipmentDashboard = () => {
 
         {/* Controls */}
         {!loading && !error && shipments.length > 0 && (
-          <div className="glass-effect border border-white/20 p-8 rounded-2xl mb-10 animate-in fade-in slide-in-from-top duration-300">
-            <h2 className="text-xl font-poppins font-bold text-white mb-6">Filters & Sorting</h2>
+          <div className="border border-gray-300 p-8 rounded-2xl mb-10 bg-white animate-in fade-in slide-in-from-top duration-300">
+            <h2 className="text-xl font-poppins font-bold text-gray-900 mb-6">Filters & Sorting</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Filter by Status */}
               <div>
-                <label className="block text-sm font-semibold text-slate-200 mb-3">Filter by Status</label>
+                <label className=\"block text-sm font-semibold text-gray-700 mb-3\">Filter by Status</label>
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:bg-white/15"
+                  className="w-full px-4 py-3 bg-white border border-[#1BCFB4] rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1BCFB4] transition-all duration-300 hover:border-[#1BCFB4]/80"
                 >
                   {statuses.map(status => (
                     <option key={status} value={status} className="bg-slate-800">
@@ -166,11 +166,11 @@ const ShipmentDashboard = () => {
 
               {/* Sort by */}
               <div>
-                <label className="block text-sm font-semibold text-slate-200 mb-3">Sort by</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-3">Sort by</label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 hover:bg-white/15"
+                  className="w-full px-4 py-3 bg-white border border-[#FE9496] rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FE9496] transition-all duration-300 hover:border-[#FE9496]/80"
                 >
                   <option value="date" className="bg-slate-800">Estimated Delivery Date</option>
                   <option value="status" className="bg-slate-800">Status</option>
@@ -181,9 +181,9 @@ const ShipmentDashboard = () => {
 
             {/* Results Count */}
             <div className="flex items-center gap-2 text-sm">
-              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
-              <p className="text-slate-300">
-                Showing <span className="font-semibold text-white">{filteredShipments.length}</span> of <span className="font-semibold text-white">{shipments.length}</span> shipments
+              <div className="w-2 h-2 rounded-full bg-[#1BCFB4]"></div>
+              <p className="text-gray-700">
+                Showing <span className="font-semibold text-[#A05AFF]">{filteredShipments.length}</span> of <span className="font-semibold text-[#1BCFB4]">{shipments.length}</span> shipments
               </p>
             </div>
           </div>
@@ -207,7 +207,7 @@ const ShipmentDashboard = () => {
                       setFilterStatus('All');
                       setSortBy('date');
                     }}
-                    className="btn-primary bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg hover:shadow-blue-500/50"
+                    className="btn-primary bg-[#A05AFF] shadow-lg hover:shadow-[#A05AFF]/50"
                   >
                     Clear Filters
                   </button>
