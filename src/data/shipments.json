@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "trackingNumber": "SHP-2025-001",
+    "status": "Delivered",
+    "lastLocation": "New York, NY",
+    "estimatedDelivery": "2025-01-20",
+    "sender": "TechCorp Industries",
+    "receiver": "John Smith",
+    "currentLocation": "Delivered to recipient",
+    "lastUpdate": "2025-01-20T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "trackingNumber": "SHP-2025-002",
+    "status": "In Transit",
+    "lastLocation": "Chicago, IL",
+    "estimatedDelivery": "2025-01-28",
+    "sender": "Global Electronics",
+    "receiver": "Sarah Johnson",
+    "currentLocation": "Distribution Center - Chicago",
+    "lastUpdate": "2025-01-27T08:15:00Z"
+  },
+  {
+    "id": 3,
+    "trackingNumber": "SHP-2025-003",
+    "status": "Out for Delivery",
+    "lastLocation": "Los Angeles, CA",
+    "estimatedDelivery": "2025-01-27",
+    "sender": "Premium Goods Ltd",
+    "receiver": "Michael Chen",
+    "currentLocation": "Out for delivery with courier",
+    "lastUpdate": "2025-01-27T09:45:00Z"
+  },
+  {
+    "id": 4,
+    "trackingNumber": "SHP-2025-004",
+    "status": "Pending",
+    "lastLocation": "Warehouse, Houston, TX",
+    "estimatedDelivery": "2025-02-02",
+    "sender": "FastShip Logistics",
+    "receiver": "Emily Davis",
+    "currentLocation": "Awaiting pickup from warehouse",
+    "lastUpdate": "2025-01-26T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "trackingNumber": "SHP-2025-005",
+    "status": "Cancelled",
+    "lastLocation": "Denver, CO",
+    "estimatedDelivery": "2025-01-25",
+    "sender": "Express Delivery Co",
+    "receiver": "Robert Martinez",
+    "currentLocation": "Shipment cancelled - returned to sender",
+    "lastUpdate": "2025-01-24T11:00:00Z"
+  }
+]
