@@ -150,7 +150,7 @@ const ShipmentDashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Filter by Status */}
               <div>
-                <label className=\"block text-sm font-semibold text-gray-700 mb-3\">Filter by Status</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-3">Filter by Status</label>
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
