@@ -1,378 +1,369 @@
-# 📦 Shipment Status Dashboard
+# 📦 ShipVyom - Shipment Status Dashboard
 
-A modern, responsive React application for tracking logistics shipments in real-time. This frontend-only dashboard demonstrates best practices in React component design, state management, and UI/UX with a clean, professional interface.
+A modern, responsive React application for tracking logistics shipments in real-time. This frontend-only dashboard demonstrates best practices in React component design, state management, and UI/UX with a professional glass-morphism design.
 
 ## 🎯 Project Overview
 
-The Shipment Status Dashboard is a simplified yet fully functional web application that displays the status of logistics shipments. It fetches mock shipment data, renders it dynamically with real-time filtering and sorting, and provides an intuitive user interface for tracking packages.
+ShipVyom is a fully functional web application that displays the status of logistics shipments with real-time filtering, sorting, and expandable details. It features a sleek dark theme with smooth animations and responsive design.
 
 ### Key Features
 
 - ✅ **Real-time Shipment Tracking** - View live status updates for multiple shipments
-- 🎨 **Status-Based Visual Indicators** - Color-coded badges and emoji indicators for quick status recognition
-- 🔍 **Advanced Filtering** - Filter shipments by delivery status (Pending, In Transit, Out for Delivery, Delivered, Cancelled)
+- 🎨 **Status-Based Visual Indicators** - Color-coded gradients and emoji indicators for quick status recognition
+- 🔍 **Advanced Filtering** - Filter shipments by delivery status
 - 📊 **Smart Sorting** - Sort by estimated delivery date, status, or tracking number
 - ⚡ **Loading States** - Professional loading animation while fetching data
 - ⚠️ **Error Handling** - Graceful error messages with retry functionality
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - 🎯 **Interactive Cards** - Expandable shipment details with smooth animations
-- 🌐 **Mock API Integration** - Simulated API calls with realistic delays
+- 🌌 **Premium Styling** - Glass-morphism effects with animated background
+- 🌐 **Mock API Integration** - Simulated API with realistic delays (500-2000ms) and 10% failure rate
 
 ## 🧱 Tech Stack
 
 | Technology | Purpose | Version |
 |---|---|---|
-| **React.js** | UI Framework | 19.2.0 |
+| **React.js** | UI Framework & Hooks | 19.2.0 |
 | **Vite** | Build Tool & Dev Server | 7.2.4 |
-| **Tailwind CSS** | Styling & Responsiveness | 3.3.0 |
-| **React Hooks** | State Management | Built-in |
-| **PostCSS** | CSS Processing | 8.4.31 |
-| **Autoprefixer** | Browser Compatibility | 10.4.16 |
+| **Tailwind CSS** | Utility-first CSS Framework | 3.3.0 |
+| **PostCSS** | CSS Processing Pipeline | 8.4.31 |
+| **Autoprefixer** | Browser Vendor Prefixes | 10.4.16 |
+| **Google Fonts** | Typography (Inter, Poppins) | Latest |
+
+## 📦 Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+
+- **Node.js** (v16 or higher) - [Download Node.js](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn**
+- **Git** - [Download Git](https://git-scm.com/)
+- **Code Editor** (VS Code recommended) - [Download VS Code](https://code.visualstudio.com/)
+
+### Verify Installation
+
+```bash
+node --version      # Should show v16 or higher
+npm --version       # Should show 8 or higher
+git --version       # Should show latest version
+```
+
+## 🚀 Quick Start Guide
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/TanviRagesh/ShipVyom.git
+cd ShipVyom
+```
+
+### Step 2: Install Dependencies
+
+```bash
+npm install
+```
+
+This command installs all required packages listed in `package.json`:
+- React and React DOM
+- Vite and build tools
+- Tailwind CSS with PostCSS
+- ESLint for code quality
+
+### Step 3: Start the Development Server
+
+```bash
+npm run dev
+```
+
+The terminal will display:
+```
+  VITE v7.2.4  ready in 290 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+```
+
+### Step 4: Open in Browser
+
+Open your browser and navigate to:
+```
+http://localhost:5173/
+```
+
+You should now see the Shipment Status Dashboard with:
+- Dark gradient background with animated floating orbs
+- Shipment filter and sort controls
+- 5 sample shipments displaying with different statuses
+- Fully interactive cards that expand on click
+
+## 📋 Available Scripts
+
+Run these commands from the project root directory:
+
+### Development Server
+```bash
+npm run dev
+```
+Starts Vite dev server with hot module replacement (HMR) at `http://localhost:5173/`
+
+### Build for Production
+```bash
+npm run build
+```
+Creates an optimized production build in the `dist/` folder
+
+### Preview Production Build
+```bash
+npm run preview
+```
+Serves the production build locally at `http://localhost:4173/`
+
+### Run ESLint
+```bash
+npm run lint
+```
+Checks code quality and identifies potential issues
 
 ## 📁 Project Structure
 
 ```
-src/
-├── components/
-│   ├── ShipmentCard.jsx          # Individual shipment card component
-│   └── ShipmentDashboard.jsx     # Main dashboard container
-├── services/
-│   └── fetchShipments.js         # Mock API service
-├── data/
-│   └── shipments.json            # Sample shipment data
-├── App.jsx                        # Main app component
-├── main.jsx                       # Entry point
-└── index.css                      # Global Tailwind styles
-
-public/
-└── vite.svg
-
-index.html                          # HTML template
-package.json                        # Dependencies & scripts
-tailwind.config.js                  # Tailwind configuration
-postcss.config.js                   # PostCSS configuration
-vite.config.js                      # Vite configuration
+ShipVyom/
+├── src/
+│   ├── components/
+│   │   ├── ShipmentCard.jsx           # Reusable shipment card component
+│   │   └── ShipmentDashboard.jsx      # Main dashboard with filtering & sorting
+│   ├── services/
+│   │   └── fetchShipments.js          # Mock API service with delays
+│   ├── data/
+│   │   └── shipments.json             # Sample shipment data (5 shipments)
+│   ├── App.jsx                        # Root component
+│   ├── main.jsx                       # React DOM entry point
+│   └── index.css                      # Global Tailwind styles
+├── public/
+│   └── vite.svg                       # Public assets
+├── index.html                         # HTML template
+├── package.json                       # Dependencies & scripts
+├── vite.config.js                     # Vite configuration
+├── tailwind.config.js                 # Tailwind CSS customization
+├── postcss.config.js                  # PostCSS configuration
+├── .gitignore                         # Git ignore rules
+└── README.md                          # This file
 ```
 
-## 🚀 Getting Started
+## 🎨 Component Breakdown
 
-### Prerequisites
+### ShipmentDashboard.jsx
+**Main container component** that manages:
+- Fetching mock shipment data
+- Loading and error states
+- Filtering by status
+- Sorting (date, status, tracking number)
+- Responsive grid layout (1 column mobile, 2 columns desktop)
 
-- Node.js 16.x or higher
-- npm or yarn package manager
+**State Variables:**
+- `shipments` - All fetched shipments
+- `filteredShipments` - After filtering/sorting
+- `loading` - Loading animation toggle
+- `error` - Error message display
+- `filterStatus` - Selected status filter
+- `sortBy` - Sort criteria
 
-### Installation
+### ShipmentCard.jsx
+**Individual shipment display component** featuring:
+- Status-based gradient backgrounds (Delivered→Green, In Transit→Orange, etc.)
+- Expandable details section
+- Sender/receiver information
+- Current location and last update timestamp
+- Estimated delivery date
+- Smooth fade-in animations
 
-1. **Clone or download the project**
-   ```bash
-   cd shipment-dashboard
-   ```
+### fetchShipments.js
+**Mock API service** that:
+- Simulates network delay (500-2000ms random)
+- Returns 5 sample shipments
+- Includes 10% random failure rate for error testing
+- Provides `getUniqueStatuses()` utility function
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## 💾 Sample Data
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
+The dashboard comes with 5 pre-loaded shipments:
 
-4. **Open in browser**
-   - The application will be available at `http://localhost:5173`
-   - Vite automatically opens the browser window
+| ID | Tracking # | Status | Sender | Receiver | Location | Delivery Date |
+|---|---|---|---|---|---|---|
+| 1 | SHP-2025-001 | Delivered | TechCorp | John Smith | New York, NY | 2025-01-20 |
+| 2 | SHP-2025-002 | In Transit | Global Electronics | Sarah Johnson | Chicago, IL | 2025-01-28 |
+| 3 | SHP-2025-003 | Out for Delivery | Premium Goods | Michael Chen | Los Angeles, CA | 2025-01-27 |
+| 4 | SHP-2025-004 | Pending | FastShip Logistics | Emily Davis | Houston, TX | 2025-02-02 |
+| 5 | SHP-2025-005 | Cancelled | Express Delivery | Robert Martinez | Denver, CO | 2025-01-25 |
 
-### Building for Production
+## 🎨 Styling & Design
 
+### Color Scheme
+- **Background**: Dark gradient (slate-900 → slate-800)
+- **Status Colors**:
+  - Delivered: Emerald to Teal gradient
+  - In Transit: Amber to Orange gradient
+  - Out for Delivery: Blue to Cyan gradient
+  - Pending: Rose to Pink gradient
+  - Cancelled: Gray to Slate gradient
+
+### Typography
+- **Headers**: Poppins (600-800 weight)
+- **Body Text**: Inter (300-800 weight)
+- Both imported from Google Fonts
+
+### Animations
+- Loading spinner pulse animation
+- Card hover effects
+- Smooth expandable transitions
+- Floating background orbs
+
+## 🔧 Customization Guide
+
+### Adding New Shipments
+Edit `src/data/shipments.json`:
+```json
+{
+  "id": 6,
+  "trackingNumber": "SHP-2025-006",
+  "status": "In Transit",
+  "sender": "Your Company",
+  "receiver": "Customer Name",
+  "currentLocation": "City, State",
+  "lastLocation": "Previous City, State",
+  "lastUpdate": "2025-01-27T10:30:00Z",
+  "estimatedDelivery": "2025-02-01"
+}
+```
+
+### Modifying Colors
+Edit `tailwind.config.js` in the theme extend section:
+```javascript
+colors: {
+  status: {
+    delivered: '#10b981',
+    transit: '#f59e0b',
+    // Add your colors here
+  }
+}
+```
+
+### Connecting to Real API
+Replace the `fetchShipments()` function in `src/services/fetchShipments.js`:
+```javascript
+export const fetchShipments = async () => {
+  const response = await fetch('https://your-api.com/shipments');
+  return response.json();
+};
+```
+
+## 🐛 Troubleshooting
+
+### Port Already in Use
+If port 5173 is already in use:
+```bash
+npm run dev -- --port 3000
+```
+
+### Dependencies Not Installing
+Clear npm cache and reinstall:
+```bash
+npm cache clean --force
+npm install
+```
+
+### Tailwind Classes Not Showing
+Restart the dev server:
+```bash
+# Press Ctrl+C to stop
+# Then run
+npm run dev
+```
+
+### Module Not Found Errors
+Ensure `node_modules` is installed:
+```bash
+npm install
+```
+
+## 📝 Git Workflow
+
+### First Time Setup
+```bash
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
+```
+
+### Making Changes
+```bash
+git add .
+git commit -m "Description of changes"
+git push origin main
+```
+
+## 📦 Building for Production
+
+### Create Optimized Build
 ```bash
 npm run build
 ```
 
-This creates an optimized production build in the `dist/` folder.
+This generates a `dist/` folder ready for deployment.
 
-### Preview Production Build
+### Deploy Options
+- **Vercel**: Connect GitHub repo, auto-deploys on push
+- **Netlify**: Drag & drop `dist/` folder or connect GitHub
+- **GitHub Pages**: Push `dist/` to gh-pages branch
+- **Traditional Hosting**: Upload `dist/` contents to your server
 
+### Deployment Command (for Netlify/Vercel)
 ```bash
-npm run preview
+npm run build
+# Deploy the dist/ folder
 ```
 
-## 📊 Data Structure
+## 📚 Learning Resources
 
-Each shipment object contains:
-
-```json
-{
-  "id": 1,
-  "trackingNumber": "SHP-2025-001",
-  "status": "Delivered",
-  "lastLocation": "New York, NY",
-  "estimatedDelivery": "2025-01-20",
-  "sender": "TechCorp Industries",
-  "receiver": "John Smith",
-  "currentLocation": "Delivered to recipient",
-  "lastUpdate": "2025-01-20T14:30:00Z"
-}
-```
-
-### Status Values
-
-- **Delivered** (🟢 Green) - Package has been delivered successfully
-- **In Transit** (🟠 Orange) - Package is on its way to destination
-- **Out for Delivery** (🟠 Orange) - Package is being delivered today
-- **Pending** (🔴 Red) - Package is awaiting pickup or processing
-- **Cancelled** (⚫ Gray) - Shipment has been cancelled
-
-## 🧩 Component Architecture
-
-### ShipmentDashboard
-
-**Responsibilities:**
-- Fetches shipment data from mock API
-- Manages loading, error, and data states
-- Handles filtering by status
-- Handles sorting options
-- Renders responsive grid layout
-- Displays empty state and error states
-
-**Key Features:**
-- Uses `useState` for state management
-- Uses `useEffect` for data fetching
-- Implements try-catch error handling
-- Simulates API failure scenarios
-- Responsive grid (1 column mobile, 2 columns desktop)
-
-### ShipmentCard
-
-**Responsibilities:**
-- Displays individual shipment information
-- Applies status-based styling and colors
-- Handles expand/collapse for detailed view
-- Logs shipment details to console
-- Formats dates and times
-
-**Key Features:**
-- Status-specific color configurations
-- Emoji indicators for visual recognition
-- Expandable details section with animation
-- Responsive layout for all screen sizes
-- Professional card-based design
-
-### fetchShipments Service
-
-**Responsibilities:**
-- Simulates API call with realistic delay (500-2000ms)
-- Handles occasional failures (10% chance)
-- Returns mock shipment data
-- Provides utility to extract unique statuses
-
-**Key Features:**
-- Returns Promise for async/await usage
-- Configurable delay for testing
-- Error simulation for UX testing
-- Reusable utility functions
-
-## 🎨 Styling & Design Decisions
-
-### Color Scheme
-
-- **Primary:** Indigo/Blue gradient background
-- **Status Colors:**
-  - Delivered: Green (#10b981)
-  - In Transit/Out for Delivery: Orange (#f97316)
-  - Pending: Red (#ef4444)
-  - Cancelled: Gray (#6b7280)
-
-### Responsive Breakpoints
-
-- **Mobile:** Single column layout (< 768px)
-- **Tablet:** Single column with medium cards (768px - 1024px)
-- **Desktop:** Two-column grid layout (> 1024px)
-
-### Typography
-
-- Headers: Bold, large font sizes for hierarchy
-- Labels: Small caps for metadata
-- Body: Readable sans-serif with proper line-height
-
-### Interactive Elements
-
-- Hover effects on buttons and cards
-- Smooth transitions and animations
-- Active state scaling for tactile feedback
-- Loading animations with pulse effect
-- Smooth expand/collapse transitions
-
-## 🧪 Testing the Application
-
-### Test Scenarios
-
-1. **Initial Load**
-   - App displays loading state
-   - Data loads within 500-2000ms
-   - Shipments display correctly
-
-2. **Filtering**
-   - Filter by each status option
-   - "All" shows all shipments
-   - Count updates correctly
-
-3. **Sorting**
-   - Sort by delivery date
-   - Sort by status alphabetically
-   - Sort by tracking number
-
-4. **Error Handling**
-   - Occasionally fails to load (10% chance)
-   - Error message displays with retry button
-   - Retry button successfully reloads data
-
-5. **Responsiveness**
-   - Desktop: 2-column grid layout
-   - Mobile: Single column stack layout
-   - Tablet: Flexible responsive layout
-
-6. **Interactive Features**
-   - Click "View Details" to expand card
-   - Expanded details show additional information
-   - Button text changes to "Hide Details"
-   - Console logs shipment details
-
-## 📝 Code Quality
-
-### Best Practices Implemented
-
-- ✅ **Component Composition** - Small, reusable components with single responsibility
-- ✅ **Props Validation** - Clear prop usage and documentation
-- ✅ **State Management** - Proper use of React Hooks (useState, useEffect)
-- ✅ **Error Handling** - Try-catch blocks and user-friendly error messages
-- ✅ **Performance** - Efficient re-renders and memoization where needed
-- ✅ **Accessibility** - Semantic HTML, proper labels, and keyboard support
-- ✅ **Documentation** - JSDoc comments and clear variable naming
-- ✅ **Responsive Design** - Mobile-first approach with Tailwind CSS
-
-### Code Style
-
-- Consistent indentation (2 spaces)
-- Clear, descriptive variable names
-- Comments for complex logic
-- JSDoc for component documentation
-- Functional component pattern throughout
-
-## 🎯 Features Breakdown
-
-### 1. Data Fetching
-- Mock API with configurable delay
-- Loading state management
-- Error handling with retry functionality
-- Real-world simulation (10% failure rate)
-
-### 2. Filtering
-- Filter by shipment status
-- "All" option to show all shipments
-- Real-time filter updates
-- Shows count of filtered results
-
-### 3. Sorting
-- Sort by estimated delivery date
-- Sort by status (alphabetical)
-- Sort by tracking number
-- Maintains filter while sorting
-
-### 4. Status Indicators
-- Color-coded background
-- Emoji indicators (✓, →, 🚚, ⏳, ✗)
-- Status badge with text
-- Descriptive status messages
-
-### 5. Responsive Design
-- Mobile-first approach
-- Flexible grid layout
-- Touch-friendly buttons
-- Readable on all screen sizes
-
-### 6. User Feedback
-- Loading animation
-- Error messages
-- Empty state handling
-- Results counter
-- Interactive buttons with feedback
-
-## 🚦 Browser Compatibility
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🔄 Future Improvements
-
-### Potential Enhancements
-
-1. **Real Backend Integration**
-   - Connect to actual API endpoints
-   - Authentication and authorization
-   - Database persistence
-
-2. **Advanced Features**
-   - Search functionality by tracking number
-   - Date range picker for filtering
-   - Shipment details modal dialog
-   - Timeline view of status updates
-   - Shipment notifications
-
-3. **Performance**
-   - Pagination for large datasets
-   - Virtual scrolling for many items
-   - Lazy loading of shipment details
-   - Service worker for offline support
-
-4. **User Experience**
-   - Dark mode toggle
-   - Bookmark/save favorite shipments
-   - Export shipment data (PDF, CSV)
-   - Custom date range filters
-   - Advanced search with AND/OR logic
-
-5. **Testing**
-   - Unit tests with Jest
-   - Component tests with React Testing Library
-   - End-to-end tests with Cypress
-   - Performance testing
-
-6. **Development**
-   - TypeScript support
-   - State management library (Redux/Zustand)
-   - API mocking with MSW
-   - Storybook for component documentation
+- [React Documentation](https://react.dev/)
+- [Vite Guide](https://vitejs.dev/)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [JavaScript ES6+](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these guidelines:
+Want to improve ShipVyom? Here's how:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit changes (`git commit -m 'Add amazing feature'`)
+5. Push to branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is open source and available under the MIT License.
 
-## 📞 Support
+## 👤 Author
 
-For issues, questions, or suggestions, please open an issue on the GitHub repository or contact the development team.
+**Ragesh**
+- GitHub: [@TanviRagesh](https://github.com/TanviRagesh)
 
 ## 🙏 Acknowledgments
 
-- React team for the excellent framework
-- Vite team for the lightning-fast build tool
-- Tailwind CSS team for the utility-first styling approach
-- The JavaScript community for continuous innovation
+- React team for the amazing UI library
+- Vite team for the blazing fast build tool
+- Tailwind CSS for the utility-first CSS framework
+- Font providers for beautiful typography
+
+## ❓ Need Help?
+
+If you encounter any issues:
+
+1. Check the [Troubleshooting](#troubleshooting) section
+2. Review the [Project Structure](#-project-structure)
+3. Open an issue on GitHub
+4. Check existing issues for similar problems
 
 ---
 
-**Built with ❤️ using React, Vite, and Tailwind CSS**
-
-*Last Updated: January 2025*
+**Ready to track shipments? Start with `npm install && npm run dev`** 🚀
