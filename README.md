@@ -35,14 +35,14 @@ Make sure you have the following installed:
 
 ### Steps to Run Locally
 
-
+```bash
 git clone https://github.com/TanviRagesh/ShipVyom.git
 cd ShipVyom
 npm install
 npm run dev
 
 Open your browser and go to: http://localhost:5173
-
+``` 
 ## Features
 
 - Displays shipment status and details
