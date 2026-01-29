@@ -1,17 +1,17 @@
-#****#Shipment Status Dashboard****
+****#Shipment Status Dashboard****
 
 the hosted link for frontend :
 
 
 
-****Project Overview****
+#****Project Overview****
 
 
 The frontend web application which I named same as ShipVyom is built using React. It shows the status of logistics shipments in a simple and responsive dashboard. The application uses mock data to display shipment details and focuses on clean UI, proper component structure, and user-friendly design.
 
 
 
-****Tech Stack****
+#****Tech Stack****
 
 -React
 -Vite
