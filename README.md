@@ -14,13 +14,16 @@ The frontend web application which I named same as ShipVyom is built using React
 #****Tech Stack****
 
 -React
+
 -Vite
+
 -Tailwind CSS
+
 -JavaScript
 
 
 
-**How to Download and Run the Project**
+#**How to Download and Run the Project**
 
 Prerequisites
 Make sure you have the following installed:
@@ -33,7 +36,7 @@ Git
 
 
 
-**Steps to Run Locally**
+#**Steps to Run Locally**
 
 git clone https://github.com/TanviRagesh/ShipVyom.git
 
@@ -47,49 +50,49 @@ Open your browser and go to: http://localhost:5173
 
 
 
-**Application Features:-**
+#**Application Features:-**
 
-Displays shipment details with current status
+-Displays shipment details with current status
 
-Filter shipments based on status
+-Filter shipments based on status
 
-Sort shipments by date, status, or tracking number
+-Sort shipments by date, status, or tracking number
 
-Shows loading and error states while fetching data
+-Shows loading and error states while fetching data
 
-Works well on mobile, tablet, and desktop screens
-
-
-
-**Design Choices**
-
-The application is divided into reusable components to keep the code clean and easy to maintain.
-
-Shipment data is fetched using a mock API to simulate real-world behavior.
-
-Tailwind CSS is used for consistent styling and responsive layout.
-
-React hooks are used to manage data, filters, sorting, and UI states.
+-Works well on mobile, tablet, and desktop screens
 
 
 
-**Optional Features**
+#**Design Choices**
 
-Simulated API delay and error handling
+-The application is divided into reusable components to keep the code clean and easy to maintain.
 
-Expandable shipment cards for more details
+-Shipment data is fetched using a mock API to simulate real-world behavior.
 
-Visual indicators for shipment status
+-Tailwind CSS is used for consistent styling and responsive layout.
 
-Responsive grid layout
+-React hooks are used to manage data, filters, sorting, and UI states.
 
 
 
-**Challenges Faced**
+#**Optional Features**
 
-Managing loading, error, filtering, and sorting states together
+-Simulated API delay and error handling
 
-Making sure the UI works smoothly on all screen sizes
+-Expandable shipment cards for more details
 
-Keeping the code readable and reusable
+-Visual indicators for shipment status
+
+-Responsive grid layout
+
+
+
+#**Challenges Faced**
+
+-Managing loading, error, filtering, and sorting states together
+
+-Making sure the UI works smoothly on all screen sizes
+
+-Keeping the code readable and reusable
 
