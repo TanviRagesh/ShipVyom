@@ -1,7 +1,7 @@
 # Shipment Status Dashboard
 
 **Hosted Link (Frontend):**  
-(Add your deployed link here)
+https://ship-vyom-six.vercel.app/
 
 ---
 
